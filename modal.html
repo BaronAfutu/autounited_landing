@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Register</title>
+  <title>Join Waitlist</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     .modal-header {
@@ -20,30 +20,70 @@
       border-color: #3498db;
     }
   </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#joinWaitlistBtn').click(function(e) {
+        e.preventDefault();
+
+        // Extract the input values
+        var name = $('#name').val();
+        var phone = $('#phone').val();
+        var email = $('#email').val();
+
+        // Validate the inputs
+        if (name.trim().length === 0 || (phone.trim().length === 0 && email.trim().length === 0)) {
+          $('#alert').removeClass('d-none');
+          return;
+        }
+
+        // Create the data object to send
+        var data = {
+          name: name,
+          phone: phone,
+          email: email
+        };
+
+        // Send the data to the server or perform any other desired action
+        // Here, we'll just log the data to the console
+        console.log('Waitlist data:', data);
+        $('#joined').removeClass('d-none');
+
+        // You can add your own logic here to handle the data submission
+      });
+    });
+  </script>
 </head>
 
 <body>
 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">Register</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#waitlistModal">Join Waitlist</button>
 
-  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal fade" id="waitlistModal" tabindex="-1" role="dialog" aria-labelledby="waitlistModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="registerModalLabel">Register</h5>
+          <h5 class="modal-title" id="waitlistModalLabel">Join Waitlist</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
+          <div id="alert" class="alert alert-danger alert-dismissible d-none fade show">
+            Please enter your name and either phone or email.
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+          </div>
+          <div id="joined" class="alert alert-success alert-dismissible d-none fade show">
+            You have been successfully added to the waitlist.
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+          </div>
           <form>
             <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-              <label for="username">Username</label>
-              <input type="text" class="form-control" id="username" placeholder="Enter your username">
+              <label for="name">Name *</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
             </div>
             <div class="form-group">
               <label for="phone">Phone</label>
@@ -51,25 +91,17 @@
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Enter your password">
+              <input type="email" class="form-control" id="email" placeholder="Enter your email address">
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Register</button>
+          <button id="joinWaitlistBtn" type="button" class="btn btn-primary">Join Waitlist</button>
         </div>
       </div>
     </div>
   </div>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 
