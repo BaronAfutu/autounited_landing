@@ -73,7 +73,6 @@ blockquote {
   color: white;
   background-color: #38B;
 }
-
 /* Navbar */
 
 .tm-navbar {
@@ -82,6 +81,9 @@ blockquote {
   z-index: 1000;
   background-color: transparent;
   transition: all 0.3s ease;
+}
+.navbar-brand img{
+  filter: invert(100%);
 }
 
 .tm-navbar.scroll {
@@ -102,6 +104,9 @@ blockquote {
 
 .tm-navbar.scroll .navbar-brand {
   color: #369;
+}
+.tm-navbar.scroll .navbar-brand img{
+  filter: none;
 }
 
 .nav-item {
@@ -524,8 +529,8 @@ figure.effect-honey:hover h2 i {
 }
 
 .contact-item {
-  margin-left: 20px;
-  margin-bottom: 50px;
+  margin-left: 3rem!important;
+  margin-bottom: 3rem!important;
 }
 
 .item-link {

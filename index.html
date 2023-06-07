@@ -46,7 +46,7 @@ https://www.tooplate.com/view/2117-infinite-loop
     <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">
       <div class="container">
         <div class="tm-next">
-          <a href="#infinite" class="navbar-brand">Autounited</a>
+          <a href="#infinite" class="navbar-brand"><img src="img/favicon.png" alt="A"> Autounited</a>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -257,21 +257,30 @@ https://www.tooplate.com/view/2117-infinite-loop
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body text-dark">
-            <form>
-              <div class="form-group">
-                <label for="name">First Name</label>
-                <input type="text" class="form-control text-capitalize" id="first_name"
-                  placeholder="Enter your first name">
+          <form id="registerForm">
+            <div class="modal-body text-dark">
+              <div id="registerAlert" class="alert alert-dismissible font-weight-lighter small"></div>
+
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="name">First Name</label>
+                    <input type="text" class="form-control text-capitalize" id="first_name"
+                      placeholder="Enter your first name" required>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="name">Last Name</label>
+                    <input type="text" class="form-control text-capitalize" id="last_name"
+                      placeholder="Enter your last name" required>
+                  </div>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="name">Last Name</label>
-                <input type="text" class="form-control text-capitalize" id="last_name"
-                  placeholder="Enter your last name">
-              </div>
+
               <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
                 <div style="display: none;">
                   Accept "<span id="username_suggest" class="text-success"></span>"? <span
                     class="fas fa-check-circle text-success" id="accept_username"></span>
@@ -279,22 +288,22 @@ https://www.tooplate.com/view/2117-infinite-loop
               </div>
               <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                <input type="email" class="form-control" id="user_email" placeholder="Enter your email">
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
               </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="registerBtn">Register</button>
-          </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <input type="submit" class="btn btn-primary" value="Register" />
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -346,18 +355,18 @@ https://www.tooplate.com/view/2117-infinite-loop
         <div class="text-center col-12">
           <h2 class="tm-text-primary tm-section-title mb-5">Sign Up !!</h2>
           <div class="row justify-content-center align-content-center">
-            <div class="col-11 col-md-6 col-lg-5 text-center shadow pb-4 mx-3">
+            <div class="col-11 col-md-5 col-lg-5 text-center shadow pb-4 mx-3">
               <div class="tm-text-primary my-4 my-md-5 h4"> Can't wait to give your car the proper treatment? </div>
               <p>
                 Download our app and get the right parts and services for your car, fast and easy. Find the nearest
                 filling station, mechanics, best prices, receive reminders on maintenance, renewals and more all from
                 the comfort of your phone.
               </p><br>
-              <a href="#contact" class="btn btn-primary mx-auto" data-toggle="modal" data-target="#waitlistModal">
+              <a href="#signup" class="btn btn-primary mx-auto" data-toggle="modal" data-target="#waitlistModal">
                 Join the Waitlist</a>
             </div>
 
-            <div class="col-11 col-md-6 col-lg-5 text-center shadow pb-4 mx-3">
+            <div class="col-11 col-md-5 col-lg-5 text-center shadow pb-4 mx-3">
               <div class="tm-text-primary my-4 my-md-5 h4"> Are you a parts dealer or own a mechanic shop? Do you offer
                 specialised services? </div>
               <p>
@@ -365,7 +374,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 customers and
                 make your products and services available to all who need them.
               </p><br>
-              <a href="#contact" class="btn btn-primary mx-auto" data-toggle="modal" data-target="#registerModal">Sign
+              <a href="#signup" class="btn btn-primary mx-auto" data-toggle="modal" data-target="#registerModal">Sign
                 Up Now!!</a>
             </div>
           </div>
@@ -455,45 +464,37 @@ https://www.tooplate.com/view/2117-infinite-loop
 
         <div class="text-center col-12">
           <h2 class="tm-section-title mb-4">Contact Us</h2>
-          <p class="mb-5">
-            Proin enim orci, tincidunt quis suscipit in, placerat nec est. Vestibulum posuere faucibus posuere. Quisque
-            aliquam velit eget leo blandit egestas. Nulla id posuere felis, quis tristique nulla.
+          <p class="mb-2">
+            We would love to hear from you! If you have any questions, feedback, or inquiries about our mobile app,
+            please don't hesitate to reach out to us. Our dedicated support team is here to assist you.
           </p><br>
         </div>
 
-        <div class="col-sm-12 col-md-6">
-          <form action="" method="get">
-            <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required />
-            <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required />
-            <textarea id="message" name="message" rows="8" placeholder="Message" class="tm-input" required></textarea>
-            <button type="submit" class="btn tm-btn-submit">Submit</button>
-          </form>
-        </div>
 
         <div class="col-sm-12 col-md-6">
-
-          <div class="contact-item">
+          <p> You can contact us through any of the following channels:</p>
+          <div class="contact-item ml-5">
             <a rel="nofollow" href="https://www.tooplate.com/contact" class="item-link">
               <i class="far fa-2x fa-comment mr-4"></i>
               <span class="mb-0">Chat Online</span>
             </a>
           </div>
 
-          <div class="contact-item">
+          <div class="contact-item ml-5">
             <a rel="nofollow" href="mailto:mail@company.com" class="item-link">
               <i class="far fa-2x fa-envelope mr-4"></i>
               <span class="mb-0">mail@company.com</span>
             </a>
           </div>
 
-          <div class="contact-item">
+          <div class="contact-item ml-5">
             <a rel="nofollow" href="https://www.google.com/maps" class="item-link">
               <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
               <span class="mb-0">Our Location</span>
             </a>
           </div>
 
-          <div class="contact-item">
+          <div class="contact-item ml-5">
             <a rel="nofollow" href="tel:0100200340" class="item-link">
               <i class="fas fa-2x fa-phone-square mr-4"></i>
               <span class="mb-0">255-662-5566</span>
@@ -503,6 +504,25 @@ https://www.tooplate.com/view/2117-infinite-loop
           <div class="contact-item">&nbsp;</div>
 
         </div>
+
+        <div class="col-sm-12 col-md-6">
+          <p>Additionally, you can fill out the contact form below and we will get back to you as soon as possible.</p>
+          <form method="get" id="contactUsForm">
+            <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required />
+            <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required />
+            <textarea id="message" name="message" rows="5" placeholder="Message" class="tm-input" required></textarea>
+            
+            <div class="alert alert-top alert-success alert-dismissible fade show small" id="contactAlert" role="alert">
+              <strong>Form Submitted.</strong> You'll hear from us soon.
+              <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+            <button type="submit" class="btn tm-btn-submit">Submit</button>
+          </form>
+        </div>
+
 
 
       </div><!-- row ending -->
@@ -610,21 +630,21 @@ https://www.tooplate.com/view/2117-infinite-loop
       });
 
 
-      $('#registerBtn').click(function (e) {
+      $('#registerForm').submit(function (e) {
         e.preventDefault();
-
-        // Extract the input values
 
         const first_name = $('#first_name').val();
         const last_name = $('#last_name').val();
         const username = $('#username').val();
         const user_phone = $('#phone').val();
-        const user_email = $('#email').val();
+        const user_email = $('#user_email').val();
         const user_password = $('#password').val();
 
+        $('#waitlistAlert').html('Please enter your name and either phone or email.');
+        $('#waitlistAlert').addClass('alert-danger').show();
+        setTimeout(() => { $('#waitlistAlert').hide(500).removeClass('alert-danger'); }, 5000);
 
-        // Create the data object to send
-        var data = {
+        const data = {
           first_name,
           last_name,
           username,
@@ -633,30 +653,26 @@ https://www.tooplate.com/view/2117-infinite-loop
           user_password,
           'firebase_id': '34dfg3'
         };
-
-        console.log(data);
-
-        // Send the POST request to the API endpoint
-        // $.post('http://localhost:3000/api/users/signup', data,
-        //   function (data, textStatus, jqXHR) {
-        //     console.log(data)
-        //   },
-        //   "json"
-        // );
         $.ajax({
           url: 'http://localhost:3000/api/users/signup',
           type: 'POST',
           contentType: 'application/json',
           data: JSON.stringify(data),
           success: function (response) {
-            // Handle the response from the API
-            console.log('Registration successful:', response);
-            // You can add your own logic here to handle the success response
+            $('#registerAlert').html('Registration successful. Redirecting...');
+            $('#registerAlert').addClass('alert-success').show();
+            setTimeout(() => {
+              window.location.href = "https://www.autounited.com/shop";
+            }, 1000);
           },
           error: function (error) {
-            // Handle the error response from the API
-            console.log('Registration failed:', JSON.parse(error.responseText));
-            // You can add your own logic here to handle the error response
+            if (error.status == 400) {
+              $('#registerAlert').html(`Registration Failed:<br>&nbsp;${JSON.parse(error.responseText).errMsg}.`);
+            }
+            else $('#registerAlert').html('Unable To Connect. Please try again or refresh the page.');
+            $('#registerAlert').removeClass('alert-danger').addClass('alert-danger').show();
+            // do something fancy with caching
+            setTimeout(() => { $('#registerAlert').hide(500).removeClass('alert-primary'); }, 5000);
           }
         });
       });
@@ -665,56 +681,44 @@ https://www.tooplate.com/view/2117-infinite-loop
       $('#joinWaitlistBtn').click(function (e) {
         e.preventDefault();
 
-        // Extract the input values
-        var name = $('#waitlist_name').val();
-        var phone = $('#waitlist_phone').val();
-        var email = $('#waitlist_email').val();
+        const name = $('#waitlist_name').val();
+        const phone = $('#waitlist_phone').val();
+        const email = $('#waitlist_email').val();
 
-        // Validate the inputs
         if (name.trim().length === 0 || (phone.trim().length === 0 && email.trim().length === 0)) {
           $('#waitlistAlert').html('Please enter your name and either phone or email.');
           $('#waitlistAlert').addClass('alert-danger').show();
-
-          setTimeout(() => {
-            $('#waitlistAlert').hide(500).removeClass('alert-danger');
-          }, 5000);
+          setTimeout(() => { $('#waitlistAlert').hide(500).removeClass('alert-danger'); }, 5000);
           return;
         }
 
-        // Create the data object to send
-        var data = {
-          name: name,
-          phone: phone,
-          email: email
-        };
+        const data = { name, phone, email };
+
         $.ajax({
           url: 'http://localhost:3000/api/users/join-waitlist',
           type: 'POST',
           contentType: 'application/json',
           data: JSON.stringify(data),
           success: function (response) {
-            $('#waitlistAlert').html('<b>Success:<b> You have been added to the waitlist.');
+            $('#waitlistAlert').html('<b>Success:</b> You have been added to the waitlist.');
             $('#waitlistAlert').removeClass('alert-danger').addClass('alert-success').show();
             document.getElementById('joinForm').reset();
-
-            setTimeout(() => {
-              $('#waitlistAlert').hide(500).removeClass('alert-success');
-            }, 5000);
+            setTimeout(() => { $('#waitlistAlert').hide(500).removeClass('alert-success'); }, 5000);
           },
           error: function (error) {
-            if(error.status==400)$('#waitlistAlert').html('You Have Already Joined The Waitlist. Thanks for your eagerness.');
-            else $('#waitlistAlert').html('Unable To Connect. Please refresh the page and try again');
+            if (error.status == 400) $('#waitlistAlert').html('Already Joined. Thanks for your eagerness.');
+            else $('#waitlistAlert').html('Unable To Connect. Please try again or refresh the page.');
             $('#waitlistAlert').removeClass('alert-danger').addClass('alert-primary').show();
             // do something fancy with caching
-            setTimeout(() => {
-              $('#waitlistAlert').hide(500).removeClass('alert-primary');
-            }, 5000);
+            setTimeout(() => { $('#waitlistAlert').hide(500).removeClass('alert-primary'); }, 5000);
           }
         });
       });
 
-
-
+      $('#contactUsForm').submit(function (e) {
+        e.preventDefault();
+        $('#contactAlert').show();
+      });
 
 
       // Hero Section - Background Parallax
