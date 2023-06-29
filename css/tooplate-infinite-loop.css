@@ -48,6 +48,12 @@ blockquote {
   padding-top: 80px;
   padding-bottom: 40px;
 }
+@media (max-width: 991px) {
+  .tm-section-pad-top {
+    padding-top: 0px;
+    padding-bottom: 40px;
+  }
+}
 
 .tm-content-box {
   padding-top: 20px;
@@ -56,6 +62,11 @@ blockquote {
 
 .tm-text-primary {
   color: #37A;
+}
+@media (max-width: 991px){
+  .tm-text-primary{
+    text-align: center;
+  }
 }
 
 .tm-font-big {
@@ -77,16 +88,25 @@ blockquote {
 
 .tm-navbar {
   position: fixed;
+  top: 10px;
   width: 100%;
   z-index: 1000;
-  background-color: transparent;
+  background-color: rgba(50, 50, 50, 0.5);
+  border-radius: 100px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
   transition: all 0.3s ease;
+}
+@media (max-width: 991px){
+  .tm-navbar{
+    border-radius: 0px;
+  }
 }
 .navbar-brand img{
   filter: invert(100%);
 }
 
 .tm-navbar.scroll {
+  top: 0px;
   background-color: white;
   border-bottom: 1px solid #e9ecef;
 }
@@ -259,6 +279,7 @@ blockquote {
 
 .tm-intro-text {
   font-size: 1.2rem;
+  text-align: justify !important;
 }
 
 .tm-icon {
